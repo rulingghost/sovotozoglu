@@ -14,26 +14,25 @@
       }
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.py"
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
     },
     {
-      "source": "/get_dollar_rate/(.*)",
-      "destination": "/api/index.py"
+      "src": "/get_dollar_rate/(.*)",
+      "dest": "/api/index.py"
     },
     {
-      "source": "/admin/(.*)",
-      "destination": "/api/index.py"
+      "src": "/admin/(.*)",
+      "dest": "/api/index.py"
     },
     {
-      "source": "/static/(.*)",
-      "destination": "/api/index.py"
+      "handle": "filesystem"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }

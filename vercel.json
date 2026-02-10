@@ -8,13 +8,6 @@
         "runtime": "python3.11",
         "includeFiles": "backend/db.sqlite3"
       }
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
     }
   ],
   "rewrites": [

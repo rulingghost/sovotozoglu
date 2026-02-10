@@ -29,7 +29,7 @@ function Sidebar() {
   const user = getUser()
 
   return (
-    <div className='hidden md:block flex-none w-60 bg-soento-white'>
+    <div className='hidden md:block flex-none w-60 bg-soento-white z-20'>
       <div className='flex flex-col size-full p-5 rounded-br-3xl bg-soento-green'>
         <div className='flex justify-center mt-6 mb-8'>
           <img src={Logo} alt='Sarfea Logo' className='w-48' />

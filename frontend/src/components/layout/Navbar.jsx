@@ -14,7 +14,7 @@ function Navbar() {
   const [showCollapsibleMenu, setShowCollapsibleMenu] = useState(false)
 
   return (
-    <div className='block md:hidden flex-none h-12 bg-soento-white'>
+    <div className='block md:hidden flex-none h-12 bg-soento-white z-30 relative'>
       <div className='relative flex flex-row justify-between items-center px-1 size-full rounded-br-3xl bg-soento-green text-white'>
         <button className='flex justify-center items-center h-full w-12' onClick={() => setShowCollapsibleMenu(true)}>
           <CgMenuGridO className='text-2xl' />

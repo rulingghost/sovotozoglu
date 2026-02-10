@@ -2,8 +2,14 @@ from django.urls import path
 from api import views  as api_view
 
 
+from django.http import JsonResponse
+
+def status_view(request):
+    return JsonResponse({"status": "ok", "message": "Django is running on Vercel"})
+
 urlpatterns = [
- #******************************* A P I ***********************************
+    path('api/status/', status_view, name='status'),
+    #******************************* A P I ***********************************
     path('api/token/', api_view.CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
     
     path('api/v1/project/', api_view.ProjectListCreateAPIView.as_view(), name='api-projects'),

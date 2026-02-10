@@ -1,5 +1,5 @@
 import axios from 'axios'
-import Logo from '/NewLogo.png'
+import Logo from '/sarfea-logo.png'
 import { useState } from 'react'
 import { useNavigate, Navigate } from 'react-router-dom'
 import { FaEyeSlash, FaUser, FaLock, FaEye, CgSpinner } from '../../../styles/icons'
@@ -52,7 +52,7 @@ function Login() {
         <form onSubmit={handleSubmit}>
           <div className='flex flex-col gap-4'>
             <div className='flex justify-center my-10'>
-              <img src={Logo} alt='logo' className='w-44 invert' />
+              <img src={Logo} alt='Sarfea Logo' className='w-64' />
             </div>
 
             <div className='relative'>

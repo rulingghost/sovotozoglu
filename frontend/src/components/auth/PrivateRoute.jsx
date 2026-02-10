@@ -27,14 +27,22 @@ function PrivateRoute({ children, allowedGroups }) {
     return
   }
 
-  if (allowedGroups.includes('All')) {
+  if (allowedGroups.includes('All') || decodedToken.is_admin) {
     return children
   }
 
-  const userGroups = decodedToken.groups
+  const userGroups = decodedToken.groups || []
+  
+  // DEBUG: Token içeriğini konsola yazdır
+  console.log('Decoded Token Groups:', userGroups)
+  console.log('Allowed Groups for this Route:', allowedGroups)
 
   // Kullanıcının grupları ile izin verilen gruplar kesişiyor mu kontrol ediliyor
   const hasAccess = allowedGroups.some((group) => userGroups.includes(group))
+
+  if (!hasAccess) {
+    console.warn('Access Denied: User groups do not match required groups.')
+  }
 
   return hasAccess ? children : <Navigate to='/not-authorized' replace={true} />
 }

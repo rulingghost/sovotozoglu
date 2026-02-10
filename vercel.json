@@ -20,6 +20,10 @@
       "destination": "/api/index.py"
     },
     {
+      "source": "/get_dollar_rate/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
       "source": "/admin/(.*)",
       "destination": "/api/index.py"
     },

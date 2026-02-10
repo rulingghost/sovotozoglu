@@ -1,5 +1,5 @@
 import '../../styles/Modal.css'
-import Logo from '/NewLogo.png'
+import Logo from '/sarfea-logo.png'
 import { jwtDecode } from 'jwt-decode'
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -20,7 +20,7 @@ function Navbar() {
           <CgMenuGridO className='text-2xl' />
         </button>
 
-        <img src={Logo} alt='logo' className='h-8' />
+        <img src={Logo} alt='Sarfea Logo' className='h-10' />
 
         <button className='flex justify-center items-center h-full w-12' onClick={() => setShowUserModal(true)}>
           <AiOutlineUser className='text-2xl' />

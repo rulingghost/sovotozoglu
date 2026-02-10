@@ -1,0 +1,7 @@
+evds
+django
+matplotlib
+whitenoise
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt

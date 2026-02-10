@@ -1,0 +1,124 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1010;
+  max-width: 90%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 2px solid lightgray;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --------------------- */
+
+.modal-body {
+  display: grid;
+  padding: 1.25rem 1.5rem;
+  gap: 0.75rem 1rem;
+  max-height: calc(100vh - 200px);
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.modal-body.one-column {
+  grid-template-columns: repeat(1, 1fr);
+  width: 400px;
+}
+
+.modal-body.two-column {
+  grid-template-columns: repeat(2, 1fr);
+  width: 750px;
+}
+
+.modal-body.three-column {
+  grid-template-columns: repeat(3, 1fr);
+  width: 950px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.field-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.field-control {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #a9a9a9;
+  border-radius: 0.25rem;
+  outline: none;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.field-control:focus {
+  box-shadow: 0 0 0 1px #0a6865;
+  border-color: #0a6865;
+}
+
+.field-error-message {
+  color: red;
+  font-size: 1rem;
+}
+
+/* --------------------- */
+
+.modal-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 2px solid lightgray;
+}
+
+.submit-button {
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  width: 100%;
+  background-color: #08514e;
+}

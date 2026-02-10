@@ -1,0 +1,35 @@
+.nav-links a {
+  @apply relative transition-none rounded-2xl px-4 py-1 mt-1 bg-soento-green text-soento-white;
+}
+
+.nav-links a.active {
+  @apply bg-soento-white text-soento-green;
+}
+
+.nav-links a.active::before {
+  content: '';
+  left: -30px;
+  bottom: 0;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 #f8f8f8;
+}
+
+.nav-links a.active::after {
+  content: '';
+  right: -30px;
+  bottom: 0;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: -15px 15px 0 #f8f8f8;
+}
+
+/* ---------------------------------------- */
+
+.card-list::-webkit-scrollbar {
+  @apply w-0 h-0;
+}

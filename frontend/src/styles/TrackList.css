@@ -1,0 +1,10 @@
+.list-table thead th {
+  text-align: start;
+  padding: 0.4rem 0.5rem;
+  font-weight: 500;
+}
+
+.list-table tbody td {
+  text-align: start;
+  padding: 0.4rem 0.5rem;
+}

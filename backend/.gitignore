@@ -1,0 +1,12 @@
+# Bytecode dosyalari
+*.pyc
+*.pyo
+__pycache__/
+
+# Sanal ortam klasorleri
+akevenv/
+myenv/
+venv/
+
+# Medya dosyalari
+media/

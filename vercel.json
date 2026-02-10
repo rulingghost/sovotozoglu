@@ -3,7 +3,8 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": { "runtime": "python3.11" }
     },
     {
       "src": "frontend/package.json",
@@ -13,31 +14,22 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/index.py"
+      "source": "/api/(.*)",
+      "destination": "api/index.py"
     },
     {
-      "src": "/admin/(.*)",
-      "dest": "api/index.py"
+      "source": "/admin/(.*)",
+      "destination": "api/index.py"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "api/index.py"
+      "source": "/static/(.*)",
+      "destination": "api/index.py"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "frontend/$1",
-      "check": true
-    },
-    {
-      "src": "/(.*)",
-      "status": 200,
-      "dest": "frontend/index.html"
+      "source": "/((?!api|admin|static).*)",
+      "destination": "/frontend/$1"
     }
   ]
 }

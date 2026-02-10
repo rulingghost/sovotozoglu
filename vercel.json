@@ -17,19 +17,19 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "api/index.py"
+      "destination": "/api/index.py"
     },
     {
       "source": "/admin/(.*)",
-      "destination": "api/index.py"
+      "destination": "/api/index.py"
     },
     {
       "source": "/static/(.*)",
-      "destination": "api/index.py"
+      "destination": "/api/index.py"
     },
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/((?!api|admin|static|assets|favicon.ico|.*\\.(?:js|css|png|jpg|jpeg|gif|ico|svg|json)).*)",
+      "destination": "/index.html"
     }
   ]
 }

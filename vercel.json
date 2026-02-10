@@ -28,7 +28,7 @@
       "destination": "/api/index.py"
     },
     {
-      "source": "/((?!api|admin|static|assets|favicon.ico|.*\\.(?:js|css|png|jpg|jpeg|gif|ico|svg|json)).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

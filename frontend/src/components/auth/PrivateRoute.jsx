@@ -11,7 +11,14 @@ function PrivateRoute({ children, allowedGroups }) {
   }
 
   // Tokeni decode et
-  const decodedToken = jwtDecode(token)
+  let decodedToken
+  try {
+    decodedToken = jwtDecode(token)
+  } catch (error) {
+    localStorage.removeItem('token')
+    window.location.href = '/login'
+    return
+  }
 
   // Token süresi bittiyse login sayfasına yönlendir
   if (decodedToken.exp * 1000 < Date.now()) {

@@ -77,6 +77,16 @@ function UserModal({ onClose }) {
     window.location.href = '/login' // Redux state temizlemek için
   }
 
+  const getUser = () => {
+    try {
+      const token = localStorage.getItem('token')
+      return token ? jwtDecode(token) : {}
+    } catch {
+      return {}
+    }
+  }
+  const user = getUser()
+
   return createPortal(
     <>
       <motion.div
@@ -95,9 +105,9 @@ function UserModal({ onClose }) {
 
           <div className='flex flex-col items-center'>
             <p className='text-center font-semibold'>
-              {jwtDecode(localStorage.getItem('token')).name} {jwtDecode(localStorage.getItem('token')).surname}
+              {user.name} {user.surname}
             </p>
-            <p>{jwtDecode(localStorage.getItem('token')).is_admin ? 'Admin' : 'Kullanıcı'}</p>
+            <p>{user.is_admin ? 'Admin' : 'Kullanıcı'}</p>
           </div>
 
           <button

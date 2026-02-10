@@ -18,6 +18,16 @@ function Sidebar() {
     window.location.href = '/login' // Redux state temizlemek için
   }
 
+  const getUser = () => {
+    try {
+      const token = localStorage.getItem('token')
+      return token ? jwtDecode(token) : {}
+    } catch {
+      return {}
+    }
+  }
+  const user = getUser()
+
   return (
     <div className='hidden md:block flex-none w-60 bg-soento-white'>
       <div className='flex flex-col size-full p-5 rounded-br-3xl bg-soento-green'>
@@ -37,10 +47,10 @@ function Sidebar() {
             <AiOutlineUser className='flex-none mr-2 text-2xl' />
             <div className='flex flex-col overflow-hidden'>
               <p className='truncate text-left font-bold'>
-                {jwtDecode(localStorage.getItem('token')).name} {jwtDecode(localStorage.getItem('token')).surname}
+                {user.name} {user.surname}
               </p>
               <p className='truncate text-left -mt-2'>
-                {jwtDecode(localStorage.getItem('token')).is_admin ? 'Admin' : 'Kullanıcı'}
+                {user.is_admin ? 'Admin' : 'Kullanıcı'}
               </p>
             </div>
           </div>

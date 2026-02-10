@@ -4,7 +4,10 @@
     {
       "src": "api/index.py",
       "use": "@vercel/python",
-      "config": { "runtime": "python3.11" }
+      "config": {
+        "runtime": "python3.11",
+        "includeFiles": "backend/db.sqlite3"
+      }
     },
     {
       "src": "frontend/package.json",

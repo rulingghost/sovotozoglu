@@ -1,27 +1,38 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.py": {
-      "runtime": "python3.11",
-      "includeFiles": "backend/db.sqlite3"
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.11",
+        "includeFiles": "backend/db.sqlite3"
+      }
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
-  },
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/index.py"
+      "destination": "api/index.py"
     },
     {
       "source": "/get_dollar_rate/(.*)",
-      "destination": "/api/index.py"
+      "destination": "api/index.py"
     },
     {
       "source": "/admin/(.*)",
-      "destination": "/api/index.py"
+      "destination": "api/index.py"
     },
     {
       "source": "/static/(.*)",
-      "destination": "/api/index.py"
+      "destination": "api/index.py"
     },
     {
       "source": "/(.*)",

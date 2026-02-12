@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom'
+import { Suspense } from 'react'
 import Sidebar from './Sidebar'
 import Navbar from './/Navbar'
 import Content from './Content'
@@ -9,7 +10,9 @@ function Layout() {
       <Sidebar /> {/* Sidebar for web view */}
       <Navbar /> {/* Navbar for mobile view */}
       <Content>
-        <Outlet /> {/* Content for both view */}
+        <Suspense fallback={null}>
+          <Outlet /> {/* Content for both view */}
+        </Suspense>
       </Content>
     </div>
   )

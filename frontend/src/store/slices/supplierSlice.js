@@ -34,7 +34,9 @@ const supplierSlice = createSlice({
       // Fetch All Data
 
       .addCase(fetchSuppliers.pending, (state) => {
-        state.loading = true
+        if (state.suppliers.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchSuppliers.fulfilled, (state, action) => {
         state.suppliers = action.payload

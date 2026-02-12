@@ -75,7 +75,9 @@ const salesOfferSlice = createSlice({
       // Fetch All Data
 
       .addCase(fetchSalesOffers.pending, (state) => {
-        state.loading = true
+        if (state.salesOffers.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchSalesOffers.fulfilled, (state, action) => {
         state.salesOffers = action.payload

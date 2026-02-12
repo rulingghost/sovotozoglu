@@ -140,9 +140,10 @@ const operationCareSlice = createSlice({
     builder
 
       // Fetch All Data
-
       .addCase(fetchOperationCares.pending, (state) => {
-        state.loading = true
+        if (state.operationCares.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchOperationCares.fulfilled, (state, action) => {
         state.operationCares = action.payload
@@ -156,7 +157,9 @@ const operationCareSlice = createSlice({
       // Fetch Single Data
 
       .addCase(fetchSingleOperationCare.pending, (state) => {
-        state.loading = true
+        if (!state.singleOperationCare) {
+          state.loading = true
+        }
       })
       .addCase(fetchSingleOperationCare.fulfilled, (state, action) => {
         state.singleOperationCare = action.payload
@@ -202,7 +205,9 @@ const operationCareSlice = createSlice({
       // Fetch All Data (for power plant)
 
       .addCase(fetchPowerPlants.pending, (state) => {
-        state.loading = true
+        if (state.powerPlants.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchPowerPlants.fulfilled, (state, action) => {
         state.powerPlants = action.payload
@@ -232,7 +237,9 @@ const operationCareSlice = createSlice({
       // Fetch All Data (for poll)
 
       .addCase(fetchPolls.pending, (state) => {
-        state.loading = true
+        if (state.polls.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchPolls.fulfilled, (state, action) => {
         state.polls = action.payload
@@ -262,7 +269,9 @@ const operationCareSlice = createSlice({
       // Fetch All Data (for fail)
 
       .addCase(fetchFails.pending, (state) => {
-        state.loading = true
+        if (state.fails.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchFails.fulfilled, (state, action) => {
         state.fails = action.payload

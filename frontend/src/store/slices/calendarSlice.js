@@ -40,7 +40,9 @@ const calendarSlice = createSlice({
       // Fetch All Data
 
       .addCase(fetchCalendars.pending, (state) => {
-        state.loading = true
+        if (state.calendars.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchCalendars.fulfilled, (state, action) => {
         state.calendars = action.payload

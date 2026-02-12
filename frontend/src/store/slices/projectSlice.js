@@ -87,7 +87,9 @@ const projectSlice = createSlice({
       // Fetch All Data
 
       .addCase(fetchProjects.pending, (state) => {
-        state.loading = true
+        if (state.projects.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchProjects.fulfilled, (state, action) => {
         state.projects = action.payload

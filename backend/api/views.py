@@ -26,14 +26,14 @@ class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
 
 class ProjectListCreateAPIView(generics.ListCreateAPIView):
-    queryset= Project.objects.all()
+    queryset= Project.objects.all().prefetch_related('project_expenses', 'project_jobhistories', 'project_incomes', 'Company_id')
     serializer_class=ProjectSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     
 class ProjectDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset= Project.objects.all()
+    queryset= Project.objects.all().prefetch_related('project_expenses', 'project_jobhistories', 'project_incomes', 'Company_id')
     serializer_class=ProjectSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
@@ -121,12 +121,12 @@ class SupplierDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 class SalesOfferListCreateAPIView(generics.ListCreateAPIView):
-    queryset= SalesOfferCard.objects.all()
+    queryset= SalesOfferCard.objects.all().prefetch_related('salesoffer_revises', 'Client_Card')
     serializer_class=SalesOfferCardSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 class SalesOfferDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset= SalesOfferCard.objects.all()
+    queryset= SalesOfferCard.objects.all().prefetch_related('salesoffer_revises', 'Client_Card')
     serializer_class=SalesOfferCardSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
@@ -166,12 +166,12 @@ class StringDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 class OperationCareListCreateAPIView(generics.ListCreateAPIView):
-    queryset= Operation_Care.objects.all()
+    queryset= Operation_Care.objects.all().prefetch_related('operation_inventors__inventor_strings', 'Operation_Care_Company')
     serializer_class=OperationCareSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 class OperationCareDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset= Operation_Care.objects.all()
+    queryset= Operation_Care.objects.all().prefetch_related('operation_inventors__inventor_strings', 'Operation_Care_Company')
     serializer_class=OperationCareSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]

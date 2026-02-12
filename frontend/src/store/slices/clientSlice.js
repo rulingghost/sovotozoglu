@@ -40,7 +40,9 @@ const clientSlice = createSlice({
       // Fetch All Data
 
       .addCase(fetchClients.pending, (state) => {
-        state.loading = true
+        if (state.clients.length === 0) {
+          state.loading = true
+        }
       })
       .addCase(fetchClients.fulfilled, (state, action) => {
         state.clients = action.payload

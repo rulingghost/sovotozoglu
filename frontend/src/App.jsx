@@ -46,7 +46,7 @@ const IncomeExpense = lazy(() => import('./components/pages/report/income-expens
 
 function App() {
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={null}>
       <Routes>
         <Route path='/login' element={<Login />} />
 

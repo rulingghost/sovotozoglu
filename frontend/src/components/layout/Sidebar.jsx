@@ -1,4 +1,4 @@
-import Logo from '/sarfea-logo.png'
+import Logo from '/NewLogo.png'
 import { jwtDecode } from 'jwt-decode'
 import { NavLink } from 'react-router-dom'
 import { links } from './MenuLinks'

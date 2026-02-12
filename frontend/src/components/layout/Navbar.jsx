@@ -1,5 +1,5 @@
 import '../../styles/Modal.css'
-import Logo from '/sarfea-logo.png'
+import Logo from '/NewLogo.png'
 import { jwtDecode } from 'jwt-decode'
 import { useState } from 'react'
 import { createPortal } from 'react-dom'

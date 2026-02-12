@@ -7,6 +7,21 @@ import PageNotFound from './components/custom/PageNotFound'
 import Layout from './components/layout/Layout'
 import Loader from './components/custom/Loader'
 
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend)
+
 // Lazy loaded components
 const Login = lazy(() => import('./components/pages/login/Login'))
 const Home = lazy(() => import('./components/pages/home/Home'))

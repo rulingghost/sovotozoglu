@@ -1,13 +1,3 @@
-import {
-  Chart as ChartJS,
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  BarElement,
-  Tooltip,
-  Legend,
-} from 'chart.js'
 import CashFlow from './CashFlow'
 import IncomeExpense from './IncomeExpense'
 import TotalExpenses from './TotalExpenses'
@@ -19,7 +9,6 @@ import { useEffect } from 'react'
 import Loader from '../../custom/Loader'
 import ErrorOccurred from '../../custom/ErrorOccurred'
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, BarElement, Tooltip, Legend)
 
 function Home() {
   const dispatch = useDispatch()

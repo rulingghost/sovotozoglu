@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { Pie, Doughnut } from 'react-chartjs-2'
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { formatNumber } from '../../../utils/valueFormatters'
 
-ChartJS.register(ArcElement, Tooltip, Legend)
 
 function ReportItem({ data }) {
   const [activeTab, setActiveTab] = useState(2)
